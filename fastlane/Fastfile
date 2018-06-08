@@ -18,10 +18,18 @@ default_platform(:ios)
 platform :ios do
   desc "Description of what the lane does"
 
+
 	lane :beta do
+		#get provisioning profile 
+		match(
+  			readonly: true,
+  			type: 'adhoc',
+  			app_identifier: 'com.github.mechinmaru.HelloWorldCI'
+		)
 
 		increment_build_number
 
+		# build ipa
 		gym(
 			project:'HelloWorldCI.xcodeproj',
 			scheme:'HelloWorldCI',
