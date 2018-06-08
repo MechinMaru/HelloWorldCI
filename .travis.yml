@@ -3,4 +3,4 @@ install:
   - bundle install
 script:
   - bundle exec fastlane beta
- 
+  
