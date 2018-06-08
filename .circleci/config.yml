@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  build:
+
+    # Specify the Xcode version to use
+    macos:
+      xcode: "9.3"
+
+    steps:
+      - checkout
+
+      # Install bundle
+      - run:
+          name: Install 
+          command: bundle install
+
+      # Build the app and run tests
+      - run:
+          name: Build and run tests
+          command: bundle exec fastlane beta
+          
+
+     
